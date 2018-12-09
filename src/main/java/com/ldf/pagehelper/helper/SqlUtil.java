@@ -483,7 +483,7 @@ public class SqlUtil implements Constant {
                 return page;
             }
         } else {
-            page.setTotal(-1l);
+            page.setTotal(-1L);
         }
         //pageSize>0的时候执行分页查询，pageSize<=0的时候不执行相当于可能只返回了一个count
         if (page.getPageSize() > 0 &&
