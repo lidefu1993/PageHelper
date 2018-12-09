@@ -21,10 +21,14 @@ public class App {
     @Bean
     public DataSource myDataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
+//        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+//        dataSource.setUrl("jdbc:mysql://172.16.36.159:3306/jzc_data_test");
+//        dataSource.setUsername( "bonc" );
+//        dataSource.setPassword( "Bonc%123456" );
         dataSource.setDriverClassName("com.bonc.xcloud.jdbc.XCloudDriver");
         dataSource.setUrl("jdbc:xcloud:@172.16.3.46:1803/bonc_sxxny_ly?connectRetry=3&socketTimeOut=60000000&connectDirect=false");
-        dataSource.setUsername( "sxxny" );
-        dataSource.setPassword( "sxxny1q2w3e" );
+        dataSource.setUsername("sxxny");
+        dataSource.setPassword("sxxny1q2w3e");
         return dataSource;
     }
 

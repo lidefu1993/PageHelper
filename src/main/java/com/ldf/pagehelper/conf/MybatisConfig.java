@@ -24,7 +24,6 @@
 
 package com.ldf.pagehelper.conf;
 
-import com.ldf.pagehelper.helper.PageHelper;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -64,21 +63,6 @@ public class MybatisConfig implements TransactionManagementConfigurer {
     public SqlSessionFactory sqlSessionFactoryBean() {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(myDatasource);
-
-        //添加mybatis的自定义的配置文件
-//        bean.setConfigLocation(new ClassPathResource("sqlMapConfig.xml"));
-        //分页插件
-        PageHelper pageHelper = new PageHelper();
-        Properties properties = new Properties();
-        properties.setProperty("reasonable", "true");
-        properties.setProperty("supportMethodsArguments", "true");
-        properties.setProperty("returnPageInfo", "check");
-        properties.setProperty("params", "count=countSql");
-        pageHelper.setProperties(properties);
-
-        //添加插件
-        bean.setPlugins(new Interceptor[]{pageHelper});
-
         //添加XML目录
         bean.setMapperLocations(getDefaultMapperResources());
         try {

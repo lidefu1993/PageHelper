@@ -1,6 +1,6 @@
 package com.ldf.pagehelper.service.impl;
 
-import com.ldf.pagehelper.helper.PageHelper;
+import com.github.pagehelper.PageHelper;
 import com.ldf.pagehelper.mapper.ITestMapper;
 import com.ldf.pagehelper.service.ITestService;
 import org.springframework.beans.factory.annotation.Autowired;
