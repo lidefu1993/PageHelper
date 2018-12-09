@@ -24,7 +24,7 @@
 
 package com.ldf.pagehelper.conf;
 
-import com.ldf.pagehelper.helper.PageHelper;
+import com.github.pagehelper.PageHelper;
 import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
