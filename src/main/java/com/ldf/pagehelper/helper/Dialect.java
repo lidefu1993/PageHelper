@@ -28,7 +28,7 @@ package com.ldf.pagehelper.helper;
  * @author liuzh
  */
 public enum Dialect {
-    mysql, mariadb, sqlite, oracle, hsqldb, postgresql, sqlserver, db2, informix, h2, sqlserver2012;
+    mysql, mariadb, sqlite, oracle, hsqldb, postgresql, sqlserver, db2, informix, h2, sqlserver2012, xcloud;
 
     public static Dialect of(String dialect) {
         try {

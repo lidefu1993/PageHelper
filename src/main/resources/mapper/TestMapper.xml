@@ -4,6 +4,6 @@
 
 
     <select id="selectList" resultType="java.util.Map">
-        SELECT NAME,MSISDN FROM game
+        select * from SXXNY.T_USER
     </select>
 </mapper>

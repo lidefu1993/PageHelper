@@ -57,13 +57,15 @@ import java.util.Properties;
 public class MybatisConfig implements TransactionManagementConfigurer {
 
     @Autowired
-    @Qualifier("jzcDataSource")
-    DataSource jzcDataSource;
+    DataSource dataSource;
 
     @Bean(name = "sqlSessionFactory")
     public SqlSessionFactory sqlSessionFactoryBean() {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
-        bean.setDataSource(jzcDataSource);
+        bean.setDataSource(dataSource);
+
+        //添加mybatis的自定义的配置文件
+        bean.setConfigLocation(new ClassPathResource("sqlMapConfig.xml"));
         //分页插件
         PageHelper pageHelper = new PageHelper();
         Properties properties = new Properties();
@@ -110,6 +112,6 @@ public class MybatisConfig implements TransactionManagementConfigurer {
     @Bean
     @Override
     public PlatformTransactionManager annotationDrivenTransactionManager() {
-        return new DataSourceTransactionManager(jzcDataSource);
+        return new DataSourceTransactionManager(dataSource);
     }
 }

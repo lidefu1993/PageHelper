@@ -81,6 +81,9 @@ public abstract class AbstractParser implements Parser, Constant {
             case h2:
                 parser = new H2Parser();
                 break;
+            case xcloud:
+                parser = new XcloudParse();
+                break;
             default:
                 throw new RuntimeException("分页插件" + dialect + "方言错误!");
         }

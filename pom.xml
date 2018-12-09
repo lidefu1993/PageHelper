@@ -84,6 +84,11 @@
             <artifactId>spring-jdbc</artifactId>
             <version>4.3.10.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>com.bonc</groupId>
+            <artifactId>bonc-xcloud</artifactId>
+            <version>2.0.8</version>
+        </dependency>
     </dependencies>
 
 </project>
