@@ -4,6 +4,6 @@
 
 
     <select id="selectList" resultType="java.util.Map">
-        select * from SXXNY.T_USER
+        select * from TZS.TEST
     </select>
 </mapper>
