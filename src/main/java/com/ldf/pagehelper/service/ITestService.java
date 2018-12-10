@@ -9,6 +9,6 @@ import java.util.Map;
  **/
 public interface ITestService {
 
-    List<Map<String, Object>> searchlist();
+    List<Map<String, Object>> searchlist(int pageNum, int pageSize);
 
 }

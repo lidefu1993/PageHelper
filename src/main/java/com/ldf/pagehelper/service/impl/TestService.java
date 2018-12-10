@@ -20,8 +20,8 @@ public class TestService implements ITestService {
     private ITestMapper testMapper;
 
     @Override
-    public List<Map<String, Object>> searchlist() {
-        PageHelper.startPage(2, 5);
+    public List<Map<String, Object>> searchlist(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
         return testMapper.selectList();
     }
 }

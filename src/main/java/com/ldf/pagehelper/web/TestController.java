@@ -1,5 +1,7 @@
 package com.ldf.pagehelper.web;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import com.ldf.pagehelper.service.ITestService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +22,8 @@ public class TestController {
 
     @ApiOperation(value = "分页测试")
     @GetMapping("page")
-    public Object pageTest(){
-        return testService.searchlist();
+    public Object pageTest(int pageNum, int pageSize){
+        return new PageInfo(testService.searchlist(pageNum, pageSize));
     }
 
 }
