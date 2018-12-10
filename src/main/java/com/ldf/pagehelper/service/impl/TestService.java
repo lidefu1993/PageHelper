@@ -21,7 +21,7 @@ public class TestService implements ITestService {
 
     @Override
     public List<Map<String, Object>> searchlist() {
-        PageHelper.startPage(1, 10);
+        PageHelper.startPage(1, 5);
         return testMapper.selectList();
     }
 }
